@@ -1,0 +1,40 @@
+# ── LaTeX auxiliary files ────────────────────────────────────
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# ── latexmk ──────────────────────────────────────────────────
+*.fdb_latexmk
+*.fls
+
+# ── Compiled output (keep source, ignore build artefacts) ────
+# Comment out the next line if you want to track the final PDF
+*.pdf
+
+# ── Editor / OS ──────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# ── Antigravity / Gemini agent files ─────────────────────────
+.gemini/
+GEMINI.md
+AGENTS.md
+.agents/
+_agents/
+_agent/

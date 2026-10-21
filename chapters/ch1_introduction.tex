@@ -1,0 +1,198 @@
+%% ============================================================
+%%  chapters/ch1_introduction.tex
+%%
+%%  This chapter is the EXAMPLE / TEMPLATE chapter that shows
+%%  how to cite references from Zotero and how to include and
+%%  reference figures.  Read every comment block carefully.
+%% ============================================================
+
+\chapter{Introduction}
+\label{ch:introduction}
+
+%% ── HOW CITATIONS WORK ──────────────────────────────────────────────────────
+%%
+%%  1.  Export your Zotero library (or a collection) as "Better BibTeX"
+%%      (.bib format) to the file  references.bib  next to main.tex.
+%%      Keep "Keep updated" checked so it auto-syncs as you add sources.
+%%
+%%  2.  Every source gets a unique citation key, e.g.  watsonMolecularStructure1953
+%%      (Zotero's Better BibTeX generates these automatically).
+%%
+%%  3.  Cite in your text with  \cite{key}  for a numbered reference, or
+%%      with \textcite{key}  to include the author name inline.
+%%
+%%  Example citation commands:
+%%    \cite{key}            →  [1]
+%%    \cite{key1, key2}     →  [1, 2]   (multiple sources at once)
+%%    \textcite{key}        →  Watson and Crick [1]
+%%    \parencite{key}       →  (Watson and Crick, 1953)  ← author-year styles
+%%
+%% ────────────────────────────────────────────────────────────────────────────
+
+
+% ── 1.1  The DNA Molecule ───────────────────────────────────────────────────
+\section{The DNA Molecule}
+\label{sec:dna-molecule}
+
+Deoxyribonucleic acid (DNA) carries the genetic information of all living organisms
+\cite{watsonMolecularStructure1953}.  % ← replace key with your actual Zotero key
+The double-helix structure consists of two antiparallel strands held together by
+Watson-Crick base pairing: adenine pairs with thymine, and guanine pairs with
+cytosine \cite{watsonMolecularStructure1953}.
+
+Multiple references can be cited together at a single point in the text
+\cite{keyOne, keyTwo, keyThree}.
+
+You can also embed the author name naturally in a sentence using \textcite{keyOne},
+who first described the phenomenon of \ldots
+
+
+%% ── HOW FIGURES WORK ────────────────────────────────────────────────────────
+%%
+%%  1.  Place all image files (PNG, PDF, JPG, EPS) in the  figures/  folder.
+%%      main.tex already sets  \graphicspath{{figures/}}  so you only need
+%%      the filename, not the full path.
+%%
+%%  2.  Use the figure environment below.  Key commands:
+%%        \includegraphics[width=…]{filename}   – import the image
+%%        \caption{…}                            – figure caption
+%%        \label{fig:your-label}                 – label for cross-referencing
+%%
+%%  3.  Refer to a figure anywhere in the text with  \ref{fig:your-label}
+%%      or the clickable  \autoref{fig:your-label}  (prints "Figure 1").
+%%
+%%  4.  The [htbp] placement options mean LaTeX tries to place the figure
+%%      Here, Top, Bottom, or on a separate Page.  Use [H] (capital) to
+%%      force the figure exactly where it appears in the source (requires
+%%      the float package, already loaded in main.tex).
+%%
+%% ────────────────────────────────────────────────────────────────────────────
+
+
+% ── 1.2  Structural DNA Nanotechnology ─────────────────────────────────────
+\section{Structural DNA Nanotechnology}
+\label{sec:structural-dna-nano}
+
+The predictability of Watson-Crick base pairing allows DNA to be used as a
+construction material at the nanoscale \cite{seeman1982}.  Below is an example
+of how to include a figure.
+
+%% ── SINGLE FIGURE ───────────────────────────────────────────────────────────
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{example-figure.png}  % put file in figures/
+  \caption{%
+    A brief but descriptive caption goes here.  Always explain what the reader
+    is looking at, define any labels or colours used in the image, and cite
+    the original source if the figure is adapted from elsewhere
+    \cite{sourceForThisFigure}.
+  }
+  \label{fig:dna-structure}
+\end{figure}
+
+As shown in \autoref{fig:dna-structure}, the structure demonstrates \ldots
+% \ref{fig:dna-structure} also works: "Figure 1.1"
+
+
+% ── 1.2.1  Holliday Junction Crossovers ────────────────────────────────────
+\subsection{Holliday Junction Crossovers}
+\label{subsec:holliday-junction}
+
+The immobile Holliday junction is the key structural motif that enables the
+construction of complex DNA nanostructures \cite{hollidayKey}.
+
+%% ── SIDE-BY-SIDE FIGURES (subfigure) ────────────────────────────────────────
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-figure-a.png}
+    \caption{Left panel: description of panel (a).}
+    \label{fig:holliday-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{example-figure-b.png}
+    \caption{Right panel: description of panel (b).}
+    \label{fig:holliday-b}
+  \end{subfigure}
+  \caption{%
+    Overall caption for the two-panel figure.  Panel~(a) shows \ldots\
+    Panel~(b) shows \ldots\ Adapted from \cite{sourceForThisFigure}.
+  }
+  \label{fig:holliday-junction}
+\end{figure}
+
+\autoref{fig:holliday-junction} shows both panels together; you can refer to
+the individual panels as \autoref{fig:holliday-a} and \autoref{fig:holliday-b}.
+
+
+% ── 1.2.2  2-Dimensional DNA Origami ───────────────────────────────────────
+\subsection{2-Dimensional DNA Origami}
+\label{subsec:2d-dna-origami}
+
+Rothemund first demonstrated that a long scaffold strand could be folded into
+arbitrary two-dimensional shapes using short ``staple'' strands
+\cite{rothemundFolding2006}.
+
+%% ── FIGURE FORCED TO EXACT POSITION ────────────────────────────────────────
+%% Use [H] only when you need the figure right here, not floating.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{example-origami.png}
+  \caption{%
+    DNA origami design showing the scaffold routing and staple positions.
+    Scaffold is shown in grey; individual staples are coloured.
+    Adapted from \cite{rothemundFolding2006}.
+  }
+  \label{fig:2d-origami}
+\end{figure}
+
+
+% ── 1.2.3  Three-Dimensional DNA Origami ───────────────────────────────────
+\subsection{Three-Dimensional DNA Origami}
+\label{subsec:3d-dna-origami}
+
+Three-dimensional DNA origami structures are constructed by stacking multiple
+2D layers \cite{douglasRapidPrototyping2009}.
+
+
+% ── 1.3  Protein Structure Determination ───────────────────────────────────
+\section{Protein Structure Determination}
+\label{sec:protein-structure}
+
+Membrane proteins constitute roughly 30\% of all proteins encoded in the human
+genome \cite{proteinGenomeKey}.  Determining their structures is critical for
+drug development \cite{drugDevKey}.
+
+
+% ── 1.4  Computer Simulation ───────────────────────────────────────────────
+\section{Computer Simulation}
+\label{sec:computer-simulation}
+
+\subsection{CanDo}
+\label{subsec:cando}
+
+CanDo (Computer-Aided Design of DNA Origami) \cite{candoKey} converts a
+caDNAno design file into a finite-element model \ldots
+
+\subsection{oxDNA}
+\label{subsec:oxdna}
+
+oxDNA is a coarse-grained molecular dynamics model of DNA \cite{oxdnaKey}.
+Simulations were run at physiological salt concentrations \ldots
+
+
+% ── 1.5  Thesis Objective ──────────────────────────────────────────────────
+\section{Thesis Objective}
+\label{sec:thesis-objective}
+
+The goal of this thesis is to design, simulate, and experimentally test a DNA
+origami support structure for membrane protein imaging via cryo-electron
+microscopy.  The specific aims are:
+\begin{enumerate}
+  \item Design a half-barrel DNA origami structure using caDNAno.
+  \item Simulate the design with CanDo and oxDNA.
+  \item Assemble and characterize the structure experimentally.
+\end{enumerate}

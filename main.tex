@@ -1,0 +1,112 @@
+%% ============================================================
+%%  main.tex  –  Honors Thesis
+%%  Kent State University Honors College
+%%
+%%  Each chapter lives in its own file inside chapters/.
+%%  Compile with:  pdflatex main && biber main && pdflatex main (x2)
+%%  (or use latexmk -pdf main)
+%% ============================================================
+
+\documentclass[12pt, oneside]{report}
+
+% ── Page layout ─────────────────────────────────────────────
+\usepackage[
+  top=1in, bottom=1in,
+  left=1.5in, right=1in   % wider left margin for binding
+]{geometry}
+
+% ── Typography & encoding ───────────────────────────────────
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}          % better spacing / hyphenation
+\usepackage{lmodern}            % scalable Computer Modern fonts
+
+% ── Math ────────────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+
+% ── Graphics & figures ──────────────────────────────────────
+\usepackage{graphicx}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{subcaption}         % side-by-side sub-figures
+\usepackage{float}              % [H] placement option
+\graphicspath{{figures/}}       % put images in figures/ folder
+
+% ── Tables ──────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{array}
+
+% ── Colours (optional – useful for links) ───────────────────
+\usepackage[dvipsnames]{xcolor}
+
+% ── Hyperlinks ──────────────────────────────────────────────
+\usepackage[
+  colorlinks = true,
+  linkcolor  = black,           % internal links (ToC, refs)
+  citecolor  = NavyBlue,        % citation numbers
+  urlcolor   = NavyBlue,
+  pdftitle   = {Your Thesis Title Here},
+  pdfauthor  = {Your Name Here}
+]{hyperref}
+
+% ── Bibliography (Zotero → Better BibTeX → .bib file) ───────
+\usepackage[
+  backend  = biber,             % requires biber (not bibtex)
+  style    = numeric,           % [1], [2], … – change as needed
+  sorting  = none,              % citation order
+  doi      = true,
+  url      = true,
+  eprint   = false
+]{biblatex}
+\addbibresource{references.bib} % export your Zotero library here
+
+% ── Line spacing ────────────────────────────────────────────
+\usepackage{setspace}
+\doublespacing                  % most universities require this
+
+% ── Header / footer ─────────────────────────────────────────
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\fancyhead[L]{\leftmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Miscellaneous ───────────────────────────────────────────
+\usepackage{lipsum}             % dummy text – remove when writing
+\usepackage{enumitem}
+
+%% ============================================================
+%%  DOCUMENT BEGIN
+%% ============================================================
+\begin{document}
+
+% ── Front matter (roman page numbers) ───────────────────────
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\include{chapters/titlepage}
+\include{chapters/abstract}
+\include{chapters/acknowledgments}
+
+% ── Table of contents / lists ───────────────────────────────
+\tableofcontents
+\listoffigures
+% \listoftables   % uncomment if you have tables
+
+\clearpage
+
+% ── Main matter (arabic page numbers) ───────────────────────
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\include{chapters/ch1_introduction}
+\include{chapters/ch2_design_and_simulation}
+\include{chapters/ch3_experimental_results}
+\include{chapters/ch4_conclusion}
+\include{chapters/ch5_methods}
+
+% ── Bibliography ────────────────────────────────────────────
+\clearpage
+\printbibliography[heading=bibintoc, title={References}]
+
+\end{document}
