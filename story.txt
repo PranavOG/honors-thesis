@@ -1,0 +1,11 @@
+- Design of both DNA based and Cholesterol based barrels
+
+- Figure 1: salt and temperature scan of unmodified barrels
+
+-Figure 2: folding experiment for DNA based barrels
+
+-Figure 3: adding soumya's PEG rings to the DNA barrel (gel and TEM)
+
+-Figure 4: Folding experiment of cholesterol barrels
+
+-Figure 5: adding Peptide nanodiscs to chol. barrel (gel and TEM)
