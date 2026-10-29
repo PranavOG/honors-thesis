@@ -9,3 +9,12 @@
 -Figure 4: Folding experiment of cholesterol barrels
 
 -Figure 5: adding Peptide nanodiscs to chol. barrel (gel and TEM)
+
+
+Format:
+Summary
+Introduction
+Motivation: explains what I want to do and why. Hand drawn/simple figures that explain the goal or vision
+Results: Design, Experiments
+Methods
+
